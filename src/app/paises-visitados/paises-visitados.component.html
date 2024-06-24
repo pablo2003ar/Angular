@@ -1,0 +1,20 @@
+<div class="row">
+    @for (pais of visitadosList$ | async; track pais.name) {
+    <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col-auto d-none d-lg-block border-end">
+                <img class="bd-placeholder-img" width="200" height="200" [src]="pais.flags.png" />
+            </div>
+            <div class="col p-3 flex-column">
+                <strong class="d-inline-block mb-2 text-primary-emphasis">{{pais.name.common}}</strong>
+                <p class="mb-0">Nombre Oficial: {{pais.name.official}}</p>
+                <p class="card-text mb-auto">Capital: {{pais.capital}}</p>
+                <p class="card-text mb-auto">Población: {{pais.population}}</p>
+                <p class="card-text mb-auto">Continente: {{pais.region}}</p>
+
+            </div>
+
+        </div>
+    </div>
+    }
+</div>

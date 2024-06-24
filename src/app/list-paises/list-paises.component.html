@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        @for (pais of paises; track pais.name) {
+            @if (pais.population > 10000) {
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+                    <div class="card text-center" style="max-width: 540px;">
+                        <img class="img-thumbnail country-image" [src]="pais.flags.png" alt="">
+                        <strong class="card-header text-primary-emphasis">{{pais.name.common}}</strong>
+                        <div class="card-body">
+                            <h5 class="card-title">Capital: {{pais.capital}}</h5>
+                            <p class="card-title">Población: {{pais.population}}</p>
+                            <p class="card-title">Continente: {{pais.region}}</p>
+                        </div>
+                        <button class="btn btn-primary" (click)="addVisitados(pais)" [disabled]="isVisitado(pais)">Visitado!</button>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
